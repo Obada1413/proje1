@@ -40,18 +40,20 @@ const getWeatherDetails = (cityName, latitude, longitude) => {
             if (!uniqueForecastDays.includes(forecastDate)) {
                 return uniqueForecastDays.push(forecastDate);
             }
+            
         });
 
         // Clearing previous weather data
         cityInput.value = "";
         currentWeatherDiv.innerHTML = "";
         weatherCardsDiv.innerHTML = "";
-
+        
         // Creating weather cards and adding them to the DOM
         fiveDaysForecast.forEach((weatherItem, index) => {
             const html = createWeatherCard(cityName, weatherItem, index);
             if (index === 0) {
                 currentWeatherDiv.insertAdjacentHTML("beforeend", html);
+                
             } else {
                 weatherCardsDiv.insertAdjacentHTML("beforeend", html);
             }
@@ -59,6 +61,7 @@ const getWeatherDetails = (cityName, latitude, longitude) => {
     }).catch(() => {
         alert("An error occurred while fetching the weather forecast!");
     });
+    
 }
 
 const getCityCoordinates = () => {
@@ -101,3 +104,9 @@ const getUserCoordinates = () => {
 locationButton.addEventListener("click", getUserCoordinates);
 searchButton.addEventListener("click", getCityCoordinates);
 cityInput.addEventListener("keyup", e => e.key === "Enter" && getCityCoordinates());
+
+const darkModeButton = document.querySelector(".dark-mode-btn");
+
+darkModeButton.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+});
