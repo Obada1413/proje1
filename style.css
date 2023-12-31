@@ -172,3 +172,31 @@ h1 {
     font-size: 1.35rem;
   }
 }
+.dark-mode {
+  background: #121212d7;
+  color: #fff;
+}
+.dark-mode-btn {
+  background: #2c3e50; /* Dark blue background color */
+  color: #fff; /* White text color */
+  padding: 10px 15px; /* Padding for better spacing */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  cursor: pointer; /* Change cursor on hover */
+  transition: background 0.3s ease; /* Smooth transition effect */
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.dark-mode-btn:hover {
+  background: #1a252f; /* Darker blue on hover */
+}
+
+.dark-mode-btn:active {
+  background: #0e141a; /* Even darker blue when clicked */
+}
+
+#localTime {
+  color: #555;
+}
